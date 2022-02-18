@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>和弦查詢</title>
+	<meta charset="utf-8"/>
+	<link rel="stylesheet" type="text/css" href="chord.css" />
+</head>
+
+<body style="background-color:#131112;z-index:-1;">
+
+<script src="chord.js"></script>
+
+<div class="piano" style="left:0px;">
+
+	<div class="whitekey" id="key1"></div>
+	<div class="whitekey" id="key3"></div>
+	<div class="whitekey" id="key5"></div>
+	<div class="whitekey" id="key6"></div>
+	<div class="whitekey" id="key8"></div>
+	<div class="whitekey" id="key10"></div>
+	<div class="whitekey" id="key12"></div>
+
+</div>
+<div class="piano">
+
+	<div class="blackkey" id="key2" style="margin-left:32px;"></div>
+	<div class="blackkey" id="key4" style="margin-left:22px;"></div>
+	<div class="blackkey" id="key7" style="margin-left:80px;"></div>
+	<div class="blackkey" id="key9" style="margin-left:22px;"></div>
+	<div class="blackkey" id="key11" style="margin-left:22px;"></div>
+
+</div>
+
+<div class="piano" style="left:435px;">
+
+	<div class="whitekey" id="key13"></div>
+	<div class="whitekey" id="key15"></div>
+	<div class="whitekey" id="key17"></div>
+	<div class="whitekey" id="key18"></div>
+	<div class="whitekey" id="key20"></div>
+	<div class="whitekey" id="key22"></div>
+	<div class="whitekey" id="key24"></div>
+
+</div>
+<div class="piano">
+
+	<div class="blackkey" id="key14" style="margin-left:467px;"></div>
+	<div class="blackkey" id="key16" style="margin-left:22px;"></div>
+	<div class="blackkey" id="key19" style="margin-left:80px;"></div>
+	<div class="blackkey" id="key21" style="margin-left:22px;"></div>
+	<div class="blackkey" id="key23" style="margin-left:22px;"></div>
+
+</div>
+
+<div class="piano" style="left:870px;">
+
+	<div class="whitekey" id="key25"></div>
+	<div class="whitekey" id="key27"></div>
+	<div class="whitekey" id="key29"></div>
+	<div class="whitekey" id="key30"></div>
+	<div class="whitekey" id="key32"></div>
+	<div class="whitekey" id="key34"></div>
+	<div class="whitekey" id="key36"></div>
+
+</div>
+<div class="piano">
+
+	<div class="blackkey" id="key26" style="margin-left:902px;"></div>
+	<div class="blackkey" id="key28" style="margin-left:22px;"></div>
+	<div class="blackkey" id="key31" style="margin-left:80px;"></div>
+	<div class="blackkey" id="key33" style="margin-left:22px;"></div>
+	<div class="blackkey" id="key35" style="margin-left:22px;"></div>
+
+</div>
+
+
+<div style="width:85%;margin-left:auto;margin-right:auto;margin-top:180px;background-color:#191718;box-shadow: 15px 25px 25px rgba(0, 0, 0, 1);">
+
+
+	<select class="inputbox" id="accidental" style="width:110px;" value="×">
+		<option>×</option>
+		<option>♭</option>
+		<option>♯</option>
+	</select>
+
+	<select class="inputbox" id="tonic" style="width:150px;" value="C">
+		<option>C</option>
+		<option>D</option>
+		<option>E</option>
+		<option>F</option>
+		<option>G</option>
+		<option>A</option>
+		<option>B</option>
+	</select>
+
+	<select class="inputbox" id="attributes" style="width:350px;" value="major(M)">
+		<option>major(M、Δ)</option>
+		<option>minor(m、-)</option>
+		<option>dominant(dom)</option>
+		<option>aug(+)</option>
+		<option>dim(o)</option>
+		<option>half-dim(ø)</option>
+		<option>minor/major(mM)</option>
+	</select>
+
+	<select class="inputbox" id="chordtype" style="width:130px;" value="3">
+		<option>3</option>
+		<option>7</option>
+		<option>9</option>
+		<option>11</option>
+		<option>13</option>
+	</select>
+
+<br/>
+
+<div style="display:flex;justify-content:flex-start;align-content:center;flex-direction:row;flex-wrap:wrap;">
+
+
+<div>
+	<div style="font-size:40px;font-weight:bold;padding: 0px 10px;color:#EEE;">on</div>
+
+		<select class="inputbox" id="onaccidental" style="width:110px;" value="×" disabled="disabled">
+			<option>×</option>
+			<option>♭</option>
+			<option>♯</option>
+		</select>
+
+		<select class="inputbox" id="ontonic" style="width:150px;" value="×" disabled="disabled">
+			<option>×</option>
+			<option>C</option>
+			<option>D</option>
+			<option>E</option>
+			<option>F</option>
+			<option>G</option>
+			<option>B</option>
+			<option>E</option>
+		</select>
+</div>
+
+<div>
+	<div style="font-size:40px;font-weight:bold;padding: 0px 10px;color:#EEE;">add</div>
+
+		<select class="inputbox" id="addset" style="width:150px;" value="×">
+			<option>×</option>
+			<option>2</option>
+			<option>4</option>
+			<option>6</option>
+			<option>9</option>
+			<option>11</option>
+			<option>13</option>
+		</select>
+</div>	
+
+<div>
+	<div style="font-size:40px;font-weight:bold;padding: 0px 10px;color:#EEE;">omit</div>
+
+		<select class="inputbox" id="omit" style="width:150px;" value="×" disabled="disabled">
+			<option>×</option>
+			<option>3</option>
+			<option>5</option>
+			<option>9</option>
+		</select>
+</div>	
+<!--
+<div>
+	<div style="font-size:40px;font-weight:bold;padding: 0px 10px;color:#EEE;">sus</div>
+
+	<div style="display:flex;justify-content:center;align-content:center;flex-direction:row;flex-wrap:nowrap;">
+
+		  <input class="radioinput" type="radio" id="sus" name="sus" value="×" checked>
+			<label class="radiolabel" for="×">×</label>
+
+		  <input class="radioinput" type="radio" id="sus" name="sus" value="2">
+			<label class="radiolabel" for="2">2</label>	
+
+		  <input class="radioinput" type="radio" id="sus" name="sus" value="4">
+			<label class="radiolabel" for="4">4</label>
+
+		  <input class="radioinput" type="radio" id="sus" name="sus" value="24">
+			<label class="radiolabel" for="24">24</label>
+
+	</div>
+
+</div>
+-->
+</div>
+<!--
+<button class="button" onclick="play();" style="width:300px;">播放(同時)</button>
+<button class="button" onclick="play2();" style="width:300px;">播放(分解和弦)</button>
+-->
+<button class="button" onclick="clearbutton();" style="width:300px;">清除</button>
+</div>
+
+<div id="chorddiv" style="
+width:85%;
+margin:45px auto;
+background-color:#191718;
+box-shadow: 15px 25px 25px rgba(0, 0, 0, 1);
+text-align:center;
+color:#FFF;font-size:70px;
+"></div>
+
+<footer style="
+width:85%;
+margin:45px auto;
+background-color:#191718;
+box-shadow: 15px 25px 25px rgba(0, 0, 0, 1);
+text-align:center;
+color:#FFF;
+font-size:20px;
+padding:30px 0px;
+">
+找不到答案?<a href="https://www.songtive.com/en/chords/piano/C+7x9" style="margin-left:30px;text-decoration:none;color:#FF0;" target="_blank">
+> 這裡有更奇怪的和弦 <
+</a>
+<p/>
+Gmail: 20901xd@gmail.com.tw
+<p/>
+Copyright © 2022 Wu Lin Jung.  All rights reserved.
+</footer>
+</body>
+</html>

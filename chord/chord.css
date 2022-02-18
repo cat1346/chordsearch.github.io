@@ -1,0 +1,56 @@
+	.inputbox{
+height:50px;
+font-size:40px;
+background-color:#191718;
+color:#EEE;
+border:1px solid #EEE;
+margin:10px;
+padding-left:15px;
+}
+	.radioinput{
+margin:20px 10px;
+width:25px;
+height:25px;
+color:#F00;
+}
+	.radiolabel{
+color:#FFF;
+font-size:45px;
+padding:auto 5px;
+}
+	.button{
+height:60px;
+border:1px solid #EEE;
+background-color:#191718;
+font-size:35px;
+color:#EEE;
+padding:auto;
+transition: 0.1s;
+margin:30px;
+}
+	.button:hover{
+border:3px solid #FF0;
+cursor:pointer;
+}
+	.piano{
+top:0px;
+position:absolute;
+display:flex;
+justify-content:center;
+align-content:center;
+flex-direction:row;
+flex-wrap:nowrap;
+}
+	.whitekey{
+background-color:white;
+width:60px;
+height:160px;
+border:1px solid #000;
+margin:0px;
+}
+	.blackkey{
+background-color:black;
+width:40px;
+height:105px;
+border:1px solid #000;
+}
