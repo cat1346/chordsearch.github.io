@@ -2,8 +2,16 @@ window.onload = function () {
 chord();
 };
 
+
+
+
+
+
+
 //select監聽
 document.addEventListener('change',chord,false);
+
+
 
 	function chord(){
 
@@ -26,6 +34,30 @@ var chordtype = document.getElementById("chordtype").value;
 
 	var ontonic = document.getElementById("onaccidental").value;
 	var ontonic = document.getElementById("ontonic").value;
+
+
+if(attributes == 'aug(+)'&&chordtype >= 11){
+typecolor();
+}
+else if(attributes == 'dim(o)'&&chordtype >= 11){
+typecolor();
+}
+else if(attributes == 'half-dim(ø)'&&chordtype >= 11){
+typecolor();
+}
+else if(attributes == 'dominant(dom)'&&chordtype == 3){
+typecolor();
+}
+else{
+document.getElementById("chordtype").style.backgroundColor = "#191718";
+document.getElementById("chordtype").style.color = "white";
+};
+
+	function typecolor(){
+document.getElementById("chordtype").style.backgroundColor = "#F99";
+document.getElementById("chordtype").style.color = "red";
+};
+
 
 
 //根音
@@ -55,7 +87,7 @@ var div2 = 'A';
 }
 else{
 tonic = 12;
-var div2 = '';
+var div2 = 'B';
 };
 
 //升降記號
@@ -204,46 +236,55 @@ else{
 var div5 = 'sus24';
 };
 */
+
+
+
+
 //add
-if(document.getElementById("addset").value == '×'){
-var div6 = '';
+
+if(document.getElementById("addaccidental").value == '♯'){
+var addaccidental = 2;
+var div6 = '♯'
 }
-else if(document.getElementById("addset").value == 2){
-var addnote = tonic+2;
-document.getElementById("key"+addnote).style.backgroundColor = "red";
-var div6 = 'add2';
-}
-else if(document.getElementById("addset").value == 4){
-var addnote = tonic+5;
-document.getElementById("key"+addnote).style.backgroundColor = "red";
-var div6 = 'add4';
-}
-else if(document.getElementById("addset").value == 6){
-var addnote = tonic+9;
-document.getElementById("key"+addnote).style.backgroundColor = "red";
-var div6 = 'add6';
-}
-else if(document.getElementById("addset").value == 9){
-var addnote = tonic+14;
-document.getElementById("key"+addnote).style.backgroundColor = "red";
-var div6 = 'add9';
-}
-else if(document.getElementById("addset").value == 11){
-var addnote = tonic+17;
-document.getElementById("key"+addnote).style.backgroundColor = "red";
-var div6 = 'add11';
+else if(document.getElementById("addaccidental").value == '♭'){
+var addaccidental = 0;
+var div6 = '♭'
 }
 else{
-var addnote = tonic+21;
-document.getElementById("key"+addnote).style.backgroundColor = "red";
-var div6 = 'add13';
+var addaccidental = 1;
+var div6 = 'add'
 };
 
 
-
-
-
-
+if(document.getElementById("addset").value == 2){
+var addnote = tonic+(addaccidental+1);
+div6 = div6+'2';
+}
+else if(document.getElementById("addset").value == 4){
+var addnote = tonic+(addaccidental+4);
+div6 = div6+'4';
+}
+else if(document.getElementById("addset").value == 6){
+var addnote = tonic+(addaccidental+8);
+div6 = div6+'6';
+}
+else if(document.getElementById("addset").value == 9){
+var addnote = tonic+(addaccidental+13);
+div6 = div6+'9';
+}
+else if(document.getElementById("addset").value == 11){
+var addnote = tonic+(addaccidental+16);
+div6 = div6+'11';
+}
+else if(document.getElementById("addset").value == 13){
+var addnote = tonic+(addaccidental+20);
+div6 = div6+'13';
+}
+else{
+var addnote = tonic;
+var div6 = '';
+};
+document.getElementById("key"+addnote).style.backgroundColor = "red";
 
 
 
